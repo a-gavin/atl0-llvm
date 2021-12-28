@@ -2,8 +2,8 @@
 PROG 	= atl0cc
 OBJS 	= main.o parse.o scan.o util.o
 DERIVED = parse.c scan.c y.tab.h
-CC 		= clang
-CFLAGS 	= -g -Wall
+CC 		= clang++
+CFLAGS 	= -g -Wall -Wno-write-strings
 LIBS	= -ll
 YACC	= byacc
 

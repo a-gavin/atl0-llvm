@@ -99,12 +99,12 @@ char get_input();
 . {
     if (list_src) ECHO;
     if (yytext[0] < ' ')
-        yyerror ("illegal character: ^%c",yytext[0] + '@');
+        yyerror("illegal character: ^%c", yytext[0] + '@');
     else {
         if (yytext[0] > '~') {
-            yyerror ("illegal character: \\%3d", (int) yytext[0]);
+            yyerror("illegal character: \\%3d", (int) yytext[0]);
         } else {
-            yyerror ("illegal character: %s",yytext);
+            yyerror("illegal character: %s", yytext);
         }
     }
 }
@@ -118,14 +118,14 @@ char get_input()
 {
     char c;
 
-    c = input();
+    c = yyinput();
     if (c == '\n') {
       line_no++;
-      if (list_src) fprintf (yyout, "\n");
-      //dump_errors ();
-      if (list_src) fprintf (yyout, "%5d:  ", line_no);
+      if (list_src) fprintf(yyout, "\n");
+      dump_errors();
+      if (list_src) fprintf(yyout, "%5d:  ", line_no);
     } else {
-        if (list_src) fprintf (yyout, "%c", c);
+        if (list_src) fprintf(yyout, "%c", c);
     }
 
     return c;
