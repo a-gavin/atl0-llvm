@@ -1,0 +1,7 @@
+program testit;
+
+  variable a, b, c : integer;
+
+  begin
+    c <-- (a - 15) + b;
+  end testit.
