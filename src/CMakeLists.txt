@@ -40,3 +40,7 @@ target_sources(atl0cc
         ${FLEX_atl0Scanner_OUTPUTS}
         ${BISON_atl0Parser_OUTPUTS}
 )
+
+# Setup and link LLVM libraries to target
+llvm_map_components_to_libnames(llvm_libs support core irreader)
+target_link_libraries(atl0cc ${llvm_libs})
