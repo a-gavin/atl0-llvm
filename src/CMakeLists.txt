@@ -19,7 +19,7 @@ target_compile_options(atl0cc PRIVATE -Wno-write-strings)
 set_target_properties(atl0cc PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Generate custom build rule to generate parser and scanner
-add_subdirectory(parse)
+add_subdirectory(ast parse)
 
 BISON_TARGET(atl0Parser
     parse/ATL0.y
