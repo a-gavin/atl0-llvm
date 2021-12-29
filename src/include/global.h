@@ -28,11 +28,11 @@ extern FILE *yyout;
 EXTERN FILE *asm_out;
 
 /* Option switches. */
-EXTERN int debug INIT(FALSE);
-EXTERN int list_src INIT(FALSE);
+EXTERN bool debug INIT(false);
+EXTERN bool list_src INIT(false);
 
 /* Set to true if an error was found. */
-EXTERN int had_errors INIT(FALSE);
+EXTERN bool had_errors INIT(false);
 
 /* Variables for the Scanner.  (You may want more.) */
 EXTERN int line_no INIT(1);

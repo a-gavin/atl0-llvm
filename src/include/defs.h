@@ -31,10 +31,6 @@
 #include <string>
 #include <vector>
 
-/* Preprocessor definitions */
-#define FALSE 0
-#define TRUE 1
-
 /* Global function prototypes. */
 /* From scan.cc */
 int yylex(void);

@@ -43,7 +43,7 @@ void yyerror(char *str, ...) {
     }
 
     va_end(args);
-    had_errors = TRUE;
+    had_errors = true;
 }
 
 void dump_errors(void) {
