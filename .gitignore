@@ -1,6 +1,2 @@
-atl0cc
-*.o
-scan.c
-parse.c
-y.tab.h
-.clang-format
+/build*
+/.vscode*

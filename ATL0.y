@@ -32,7 +32,7 @@
 %token STRING INT_CONST IDENTIFIER
 
 /* Association */
-%left "+" "-"
+%left '+' '-'
 
 %%
 program : PROGRAM IDENTIFIER ';' var_decl BEGINSY statement_list END IDENTIFIER '.'

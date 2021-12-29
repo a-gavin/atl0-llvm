@@ -6,7 +6,7 @@
 #include "global.h"
 
 int main(int argc, char **argv) {
-    char *src_name = "sample.atl";
+    char *src_name = "ex_programs/sample.atl";
 
     yyin = fopen(src_name, "r");
     if (yyin == NULL) {

@@ -16,12 +16,12 @@
 #define TRUE 1
 
 /* Global function prototypes. */
-/* From scan.c */
+/* From scan.cc */
 int yylex(void);
 
-/* From parse.c */
+/* From parse.cc */
 int yyparse(void);
 
-/* From util.c */
+/* From util.cc */
 void dump_errors(void);
 void yyerror(char *mesg, ...);
