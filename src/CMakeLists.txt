@@ -7,8 +7,7 @@ add_executable(atl0cc
 # Track include files for atl0cc target
 target_include_directories(atl0cc
     PRIVATE
-        # Don't like this, but ${CMAKE_SOURCE_DIR} will break when run in script mode
-        ../include
+        include
         ${CMAKE_CURRENT_BINARY_DIR}
 )
 
