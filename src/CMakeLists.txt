@@ -8,7 +8,6 @@ add_executable(atl0cc
 target_include_directories(atl0cc
     PRIVATE
         include
-        ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 # Track flex library to link for atl0cc target,

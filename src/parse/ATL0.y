@@ -14,6 +14,8 @@
 /* Includes needed.   */
 #include "defs.h"
 #include "global.h"
+
+int line_no = 1;
 %}
 
 %start program

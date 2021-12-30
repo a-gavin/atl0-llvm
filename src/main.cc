@@ -1,12 +1,11 @@
-/* Get the standard definitions and includes. */
 #include "defs.h"
-
-/* Variable Definitions ... */
-#define MAIN
 #include "global.h"
 
+bool debug, list_src, had_errors = false;
+char *src_name = NULL;
+
 int main(int argc, char **argv) {
-    char *src_name = "ex_programs/sample.atl";
+    src_name = "ex_programs/sample.atl";
 
     yyin = fopen(src_name, "r");
     if (yyin == NULL) {
