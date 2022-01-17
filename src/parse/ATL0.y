@@ -16,13 +16,22 @@
 #include "global.h"
 
 int line_no = 1;
+
+/* Move this */
+enum ID_Kind {
+    ik_List,
+    ik_Variable
+};
+
+ast::ExprAST *make_id(char *s_value...);
 %}
 
 %start program
 
 %union {
-    int     i_value;
-    char* 	s_value;
+    int             i_value;
+    char* 	        s_value;
+    ast::ExprAST*   ast_expr_value;
 }
 
 /* Reserved words for ATL0. */
@@ -31,10 +40,14 @@ int line_no = 1;
 /*  <--    */
 %token ASSIGN
 
-%token STRING INT_CONST IDENTIFIER
+%token STRING INT_CONST
+%token<s_value> IDENTIFIER
 
 /* Association */
 %left '+' '-'
+
+/* Token types */
+%type<ast_expr_value> id_list
 
 %%
 program : PROGRAM IDENTIFIER ';' var_decl BEGINSY statement_list END IDENTIFIER '.'
@@ -47,8 +60,10 @@ var_dec_list : id_list ':' INTEGER ';'
 	|  var_dec_list id_list ':' INTEGER ';'
 	;
 
-id_list	: IDENTIFIER 
+id_list	: IDENTIFIER
+        { $$ = make_id($1); }
 	|  id_list ',' IDENTIFIER
+        { $$ = make_id($3, $1); }
 	;
 
 statement_list : statement
@@ -69,3 +84,19 @@ expression : expression '-' expression
 	;
 
 %%
+
+ast::ExprAST *make_id(char *string, ID_Kind kind...) {
+    va_list args;
+    va_start(args, kind);
+
+    switch (kind) {
+        case ik_Variable:
+            break;
+        case ik_List:
+            break;
+    }
+
+    va_end(args);
+
+    return nullptr;
+}

@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+using namespace llvm;
+
 namespace ast {
     // ExprAST - Base class for all expression nodes.
     class ExprAST {
